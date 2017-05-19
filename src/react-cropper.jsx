@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
+import Cropper from 'cropperjs';
 import ReactDOM from 'react-dom';
+
 
 const optionProps = [
   'dragMode',
@@ -55,8 +56,6 @@ class ReactCropper extends Component {
     .reduce((prevOptions, propKey) =>
       Object.assign({}, prevOptions, { [propKey]: this.props[propKey] })
     , {});
-
-    const Cropper = require('cropperjs').default;
     this.cropper = new Cropper(this.img, options);
   }
 
